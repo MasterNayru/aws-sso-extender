@@ -413,6 +413,7 @@ export default {
     refreshProfiles() {
       this.appProfiles = [];
       this.appProfiles = this.$ext.customizeProfiles(this.user, this.raw.appProfiles);
+      this.saveUser();
       this.loaded = true;
     },
     demo() {
@@ -476,6 +477,26 @@ export default {
     },
     updateProfile(appProfile: AppData) {
       this.$ext.log('popup:updateProfile');
+      appProfile.profile.custom!.color = appProfile.profile.custom!.color.replace(
+          '#',
+          '',
+      );
+      if (!appProfile.profile.custom) {
+        appProfile.profile.custom = {
+          favorite: appProfile.profile.custom!.favorite,
+          hide: appProfile.profile.custom!.hide,
+          icon: null,
+          label: null,
+          color: '',
+          iamRoles: [],
+          metadata: {
+            accountEmail: appProfile.searchMetadata!.AccountEmail,
+            accountName: appProfile.searchMetadata!.AccountName,
+            accountId: appProfile.searchMetadata!.AccountId,
+            profileName: appProfile.profile.name,
+          }
+        };
+      }
       this.user.custom.profiles[appProfile.profile.id] = appProfile.profile
         .custom as CustomData;
       this.$ext.log(this.user);

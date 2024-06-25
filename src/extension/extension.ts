@@ -9,7 +9,8 @@ import {
   CustomData,
   ExtensionPermissions,
   UserConfig,
-  ContextualIdentity,
+  ContextualIdentity, 
+  CustomDataMetadata,
 } from '../types';
 
 function encodeUriPlusParens(str) {
@@ -407,6 +408,7 @@ class Extension {
       hide: false,
       label: null,
       iamRoles: [] as IamRole[],
+      metadata: {} as CustomDataMetadata,
     };
     if (setDefaultColor) {
       defaults.color = user.custom.colorDefault;
@@ -418,7 +420,14 @@ class Extension {
       profile.profile.custom = ap.profile.id in user.custom.profiles
         ? user.custom.profiles[ap.profile.id]
         : defaults as CustomData;
+      profile.profile.custom.metadata = {
+        accountId: ap.searchMetadata!.AccountId,
+        accountName: ap.searchMetadata!.AccountName,
+        accountEmail: ap.searchMetadata!.AccountEmail,
+        profileName: ap.profile.name,
+      };
       customProfiles.push(profile);
+      user.custom.profiles[ap.profile.id] = profile.profile.custom;
     });
     this.log(user);
     this.log(customProfiles);

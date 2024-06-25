@@ -57,6 +57,12 @@ const users: UserData[] = [
             color: '23b0ff',
             label: 'DemoCrossAccountRole',
           }],
+          metadata: {
+            accountId: '432143214321',
+            accountName: 'Development',
+            accountEmail: 'test@localhost',
+            profileName: 'DemoCrossAccountRole',
+          }
         },
         'p-124': {
           color: 'FF5733',
@@ -70,6 +76,12 @@ const users: UserData[] = [
             color: 'FF5733',
             label: 'DemoCrossAccountRole2',
           }],
+          metadata: {
+            accountId: '432143214321',
+            accountName: 'Development',
+            accountEmail: 'test@localhost',
+            profileName: 'DemoCrossAccountRole2',
+          }
         },
         'p-125': {
           color: 'FF5733',
@@ -77,6 +89,12 @@ const users: UserData[] = [
           favorite: true,
           hide: false,
           iamRoles: [],
+          metadata: {
+            accountId: '123412341234',
+            accountName: 'Production',
+            accountEmail: 'test@localhost',
+            profileName: 'ViewerAccess',
+          }
         },
       },
       hotkeys: {
@@ -115,6 +133,12 @@ const appProfiles: AppData[] = [
           color: '23b0ff',
           label: 'DemoCrossAccountRole',
         }],
+        metadata: {
+          accountId: '432143214321',
+          accountName: 'Development',
+          accountEmail: 'test@localhost',
+          profileName: 'DemoCrossAccountRole',
+        }
       },
     },
     searchMetadata: {
@@ -143,6 +167,12 @@ const appProfiles: AppData[] = [
         hide: false,
         label: null,
         iamRoles: [],
+        metadata: {
+          accountId: '123412341234',
+          accountName: 'Production',
+          accountEmail: 'test@localhost',
+          profileName: 'AdministratorAccess',
+        }
       },
     },
     searchMetadata: {
@@ -171,6 +201,12 @@ const appProfiles: AppData[] = [
         hide: false,
         label: null,
         iamRoles: [],
+        metadata: {
+          accountId: '123412341234',
+          accountName: 'Production',
+          accountEmail: 'test@localhost',
+          profileName: 'ViewerAccess',
+        }
       },
     },
     searchMetadata: {
@@ -199,6 +235,12 @@ const appProfiles: AppData[] = [
         hide: false,
         label: null,
         iamRoles: [],
+        metadata: {
+          accountId: '012345678912',
+          accountName: 'ClientAccount1',
+          accountEmail: 'test@localhost',
+          profileName: 'ViewerAccess',
+        }
       },
     },
     searchMetadata: {
@@ -227,6 +269,12 @@ const appProfiles: AppData[] = [
         hide: false,
         label: null,
         iamRoles: [],
+        metadata: {
+          accountId: '120123456789',
+          accountName: 'ClientAccount2',
+          accountEmail: 'test@localhost',
+          profileName: 'ViewerAccess',
+        }
       },
     },
     searchMetadata: {

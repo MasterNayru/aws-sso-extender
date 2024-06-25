@@ -150,6 +150,14 @@ export interface CustomData {
   label?: string | null
   color: string;
   iamRoles: IamRole[]
+  metadata: CustomDataMetadata
+}
+
+export interface CustomDataMetadata {
+  accountId: string
+  accountName: string
+  accountEmail: string
+  profileName: string
 }
 
 export interface IamRole {

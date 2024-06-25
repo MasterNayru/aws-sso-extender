@@ -817,22 +817,10 @@ export default {
     },
     resetActiveProfile() {
       const profile = this.activeProfile;
-      profile.profile.custom = {
-        favorite: profile.profile.custom!.favorite,
-        hide: profile.profile.custom!.hide,
-        icon: null,
-        label: null,
-        color: '',
-        iamRoles: [],
-      };
       this.$emit('updateProfile', profile);
       this.editorVisible = false;
     },
     saveActiveProfile() {
-      this.activeProfile.profile.custom!.color = this.activeProfile.profile.custom!.color.replace(
-        '#',
-        '',
-      );
       this.$emit('updateProfile', this.activeProfile);
       this.editorVisible = false;
     },
